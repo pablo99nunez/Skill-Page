@@ -1,0 +1,23 @@
+.hexagon {
+  position: relative;
+  width: var(--size);
+  height: calc(var(--size) / 1.73);
+  background-color: var(--color);
+  color: var(--color);
+  margin: calc((var(--size) / 1.73) / 2) 0;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    border-left: calc(var(--size) / 2) solid transparent;
+    border-right: calc(var(--size) / 2) solid transparent;
+  }
+  &::after {
+    top: 100%;
+    border-top: calc((var(--size) / 1.73) / 2) solid;
+  }
+  &::before {
+    bottom: 100%;
+    border-bottom: calc((var(--size) / 1.73) / 2) solid;
+  }
+}

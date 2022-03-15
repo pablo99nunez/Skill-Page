@@ -1,0 +1,18 @@
+:root {
+  --color-dark-bg: #27292d;
+  --color-grey: #383b40;
+  --color-primary: #767f32;
+  --color-white: #e2e3e3;
+}
+
+.App {
+  aspect-ratio: 9 / 16;
+  width: 500px;
+  background-color: var(--color-dark-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  @media (max-width: 600px) {
+    width: 100vw;
+    height: 100vh;
+  }
+}
