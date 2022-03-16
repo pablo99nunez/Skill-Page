@@ -1,0 +1,14 @@
+{
+    "redirects": [
+      { 
+        "source": "/api",
+        "destination": "https://bio.torre.co/", 
+        "permanent": true
+      },
+      {
+        "source": "/torreco",
+        "destination": "https://torre.co/", 
+        "permanent": true
+      }
+    ]
+  }
