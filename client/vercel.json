@@ -1,20 +1,20 @@
 {
     "rewrites": [
       { 
-        "source": "/api/:path*",
-        "destination": "https://bio.torre.co/:path*"
+        "source": "/api/*",
+        "destination": "https://bio.torre.co/*"
       },
       { 
-        "source": "/api/:path*/",
-        "destination": "https://bio.torre.co/:path*/"
+        "source": "/api/*/",
+        "destination": "https://bio.torre.co/*/"
       },
       {
-        "source": "/torreco/:path*",
-        "destination": "https://torre.co/:path*"
+        "source": "/torreco/*",
+        "destination": "https://torre.co/*"
       },
       {
-        "source": "/torreco/:path*/",
-        "destination": "https://torre.co/:path*/"
+        "source": "/torreco/*/",
+        "destination": "https://torre.co/*/"
       }
     ],
     "headers": [
