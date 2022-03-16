@@ -1,0 +1,4 @@
+/api/_ https://bio.torre.co/:splat 200
+/torreco/_ https://torre.co/:splat 200
+/_ /index.html 200
+/\* /index.html 404

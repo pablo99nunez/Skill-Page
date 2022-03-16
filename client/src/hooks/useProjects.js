@@ -10,10 +10,9 @@ export default function useProjects(user, skill) {
       Promise.all(
         jobsIds?.map(async (id, i) => {
           return await axios
-            .get(`/torreco/api/genome/bios/${user?.person.publicId}/jobs/${id}`)
+            .get(`/job/${user?.person.publicId}/${id}`)
             .then((e) => {
               return e.data;
-              // setJobs(jobs?.length ? [...jobs, e.data] : [e.data]);
             });
         })
       ).then((e) => setJobs(e));

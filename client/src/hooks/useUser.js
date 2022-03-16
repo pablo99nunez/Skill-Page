@@ -6,12 +6,7 @@ export default function useUser(username) {
   function getUser() {
     setUser(null);
     axios
-      .get(`/api/api/bios/${username}`, {
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+      .get(`/user/${username}`)
       .then((user) => setUser(user.data))
       .catch((error) => console.log("Hubo un error: " + error));
   }
