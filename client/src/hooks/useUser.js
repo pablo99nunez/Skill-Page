@@ -5,12 +5,13 @@ export default function useUser(username) {
   const [user, setUser] = useState(null);
   function getUser() {
     axios
-      .get(`https://torre.bio/api/bios/${username}`, {
+      .get(`/api/api/bios/${username}`, {
         headers: {
-          "content-type": "application/xml",
+          "Content-Type": "application/json;charset=UTF-8",
+          "Access-Control-Allow-Origin": "*",
         },
       })
-      .then((user) => setUser(user))
+      .then((user) => setUser(user.data))
       .catch((error) => console.log("Hubo un error: " + error));
   }
 

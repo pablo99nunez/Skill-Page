@@ -1,0 +1,14 @@
+button {
+  color: var(--color);
+  background-color: var(--darkColor);
+  border: none;
+  font-size: 1.1rem;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 10px;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

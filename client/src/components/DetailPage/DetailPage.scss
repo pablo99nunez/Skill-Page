@@ -1,0 +1,40 @@
+.detail {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background-color: var(--color-dark-bg);
+  display: flex;
+  flex-direction: column;
+  header {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    img {
+      cursor: pointer;
+      filter: invert(100%) sepia(1%) saturate(1242%) hue-rotate(99deg)
+        brightness(96%) contrast(84%);
+    }
+    box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.3);
+  }
+  .skill-info {
+    display: flex;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    img {
+      filter: invert(100%) sepia(1%) saturate(1242%) hue-rotate(99deg)
+        brightness(96%) contrast(84%);
+    }
+    border-bottom: 2px solid var(--color-grey);
+    .skill-info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
