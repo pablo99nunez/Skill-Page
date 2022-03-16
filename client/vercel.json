@@ -4,17 +4,10 @@
         "source": "/api",
         "destination": "https://bio.torre.co"
       },
-      { 
-        "source": "/api/",
-        "destination": "https://bio.torre.co/"
-      },
+      
       {
         "source": "/torreco",
         "destination": "https://torre.co"
-      },
-      {
-        "source": "/torreco/",
-        "destination": "https://torre.co/"
       }
     ],
     "headers": [
