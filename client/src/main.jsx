@@ -8,7 +8,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = import.meta.env.PROD
   ? "https://skill-page-backend.vercel.app/api"
-  : "http://locahost:3001/api";
+  : "http://localhost:3001/api";
 
 ReactDOM.render(
   <React.StrictMode>

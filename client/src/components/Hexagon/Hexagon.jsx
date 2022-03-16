@@ -7,11 +7,13 @@ export default function Hexagon({
   children,
 }) {
   return (
-    <div
-      className="hexagon"
-      style={{ "--color": color, color, "--size": size }}
-    >
-      {children}
+    <div className="hexagon-shadow">
+      <div
+        className="hexagon"
+        style={{ "--color": color, color, "--size": size }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
