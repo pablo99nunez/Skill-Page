@@ -11,10 +11,10 @@ app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 app.use(morgan("tiny"));
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Server Working");
 });
-app.get("/user/:username", (req, res) => {
+app.get("/api/user/:username", (req, res) => {
   const { username } = req.params;
   if (!username) return res.status(400).send("You must provide an username");
   axios
@@ -26,7 +26,7 @@ app.get("/user/:username", (req, res) => {
       res.status(400).json({ error });
     });
 });
-app.get("/job/:idUser/:idJob", (req, res) => {
+app.get("/api/job/:idUser/:idJob", (req, res) => {
   const { idUser, idJob } = req.params;
   if (!idUser || !idJob)
     return res
