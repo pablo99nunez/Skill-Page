@@ -6,7 +6,7 @@ export default function useUser(username) {
   function getUser() {
     setUser(null);
     axios
-      .get(`http://localhost:3001/user/${username}`)
+      .get(`/user/${username}`)
       .then((user) => setUser(user.data))
       .catch((error) => console.log("Hubo un error: " + error));
   }

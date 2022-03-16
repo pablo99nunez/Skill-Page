@@ -10,7 +10,7 @@ export default function useProjects(user, skill) {
       Promise.all(
         jobsIds?.map(async (id, i) => {
           return await axios
-            .get(`http://localhost:3001/job/${user?.person.publicId}/${id}`)
+            .get(`/job/${user?.person.publicId}/${id}`)
             .then((e) => {
               return e.data;
             });
