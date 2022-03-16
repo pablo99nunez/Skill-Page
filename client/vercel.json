@@ -1,5 +1,5 @@
 {
-    "rewrites": [
+    "redirects": [
       { 
         "source": "/api/:path",
         "destination": "https://bio.torre.co/:path"
