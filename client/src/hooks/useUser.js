@@ -7,7 +7,7 @@ export default function useUser(username) {
     axios
       .get(`https://torre.bio/api/bios/${username}`, {
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "content-type": "application/xml",
         },
       })
       .then((user) => setUser(user))
