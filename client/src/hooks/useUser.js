@@ -4,6 +4,7 @@ import axios from "axios";
 export default function useUser(username) {
   const [user, setUser] = useState(null);
   function getUser() {
+    setUser(null);
     axios
       .get(`/api/api/bios/${username}`, {
         headers: {
@@ -17,7 +18,7 @@ export default function useUser(username) {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [username]);
 
   return user;
 }

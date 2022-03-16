@@ -2,7 +2,30 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: #00000044;
-  backdrop-filter: blur(20px);
+  background-color: #000000ee;
+
   display: flex;
+  z-index: 300;
+  left: 0;
+  top: 100%;
+  align-items: flex-start;
+  padding-top: 1rem;
+  justify-content: center;
+  div {
+    display: flex;
+    width: 70%;
+    input {
+      padding: 1rem;
+      width: 100%;
+      border-radius: 10px 0px 0 10px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      height: 100%;
+      border-radius: 0 10px 10px 0;
+    }
+  }
 }

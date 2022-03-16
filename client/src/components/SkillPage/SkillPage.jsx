@@ -12,10 +12,10 @@ import Options from "../Options/Options";
 export default function SkillPage({ user }) {
   return (
     <div className="skillPage">
-      <Avatar size="10rem" src={user.person.picture}></Avatar>
+      <Avatar size="10rem" src={user?.person.picture}></Avatar>
       <h1>
-        {user.person.name}{" "}
-        {user.person.verified && <img src={verified} alt="verified" />}
+        {user?.person.name}{" "}
+        {user?.person.verified && <img src={verified} alt="verified" />}
       </h1>
 
       <div className="skills">
@@ -26,7 +26,7 @@ export default function SkillPage({ user }) {
             <h3>Master / Influencer</h3>
           </div>
           <Options
-            data={user.strengths
+            data={user?.strengths
               .filter((e) => e.proficiency === "expert")
               .map((e) => e.name)}
           ></Options>
@@ -37,7 +37,7 @@ export default function SkillPage({ user }) {
             <h3>Proficient</h3>
           </div>
           <Options
-            data={user.strengths
+            data={user?.strengths
               .filter((e) => e.proficiency === "proficient")
               .map((e) => e.name)}
           ></Options>
@@ -48,7 +48,7 @@ export default function SkillPage({ user }) {
             <h3>Novice</h3>
           </div>
           <Options
-            data={user.strengths
+            data={user?.strengths
               .filter((e) => e.proficiency === "novice")
               .map((e) => e.name)}
           ></Options>
@@ -59,13 +59,9 @@ export default function SkillPage({ user }) {
             <h3>No experience but interested</h3>
           </div>
           <Options
-            data={user.strengths
+            data={user?.strengths
               .filter((e) => e.proficiency === "no-experience-interested")
-              .map((e) => (
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <span>{e.name} </span>
-                </div>
-              ))}
+              .map((e) => e.name)}
           ></Options>
         </div>
       </div>

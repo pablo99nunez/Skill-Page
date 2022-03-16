@@ -5,6 +5,7 @@ import searchIco from "../../assets/icons/search.svg";
 import Button from "../Button/Button";
 import Hexagon from "../Hexagon/Hexagon";
 import Search from "../Search/Search";
+import { AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [openSearch, setOpenSearch] = useState(false);
@@ -12,7 +13,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div>
         <img src={menuIco} alt="Menú" />
-        <h2>
+        <h2 onClick={() => (window.location = "https://torre.co")}>
           torre<span>.co</span>
         </h2>
       </div>
@@ -23,7 +24,9 @@ export default function Navbar() {
           onClick={() => setOpenSearch(!openSearch)}
         />
         <Button>Sign In</Button>
-        {openSearch && <Search />}
+        <AnimatePresence>
+          {openSearch && <Search open={openSearch} setOpen={setOpenSearch} />}
+        </AnimatePresence>
       </div>
     </nav>
   );

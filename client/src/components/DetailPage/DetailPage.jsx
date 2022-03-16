@@ -11,6 +11,7 @@ import axios from "axios";
 import Avatar from "../Avatar/Avatar";
 import { useParams } from "react-router";
 import useProjects from "../../hooks/useProjects";
+import Loading from "../Loading/Loading";
 
 export default function DetailPage({ skill, setOpen }) {
   const { username } = useParams();
@@ -22,7 +23,12 @@ export default function DetailPage({ skill, setOpen }) {
 
   useEffect(() => {
     if (user) {
-      setSkill(user.strengths.find((e) => e.name.includes(skill)));
+      setSkill(
+        user.strengths.find((e) => {
+          console.log(e.name, skill);
+          return e.name.includes(skill);
+        })
+      );
     }
   }, [user]);
   useEffect(() => {
@@ -46,19 +52,54 @@ export default function DetailPage({ skill, setOpen }) {
         );
     }
   }, [skillData]);
+  function renderProperInfo() {
+    if (skillData) {
+      console.log(skillData?.proficiency);
+      switch (skillData.proficiency) {
+        case "expert":
+          return (
+            <>
+              <img src={runFast} alt="expert" />
+              <h2>Master / Influencer</h2>
+            </>
+          );
+        case "proficient":
+          return (
+            <>
+              <img src={run} alt="Proficient" />
+              <h2>Proficient</h2>
+            </>
+          );
+        case "novice":
+          return (
+            <>
+              <img src={walk} alt="novice" />
+              <h2>Novice</h2>
+            </>
+          );
+        case "no-experience-interested":
+          return (
+            <>
+              <img src={baby} alt="no experience" />
+              <h2>No experience but interested</h2>
+            </>
+          );
+      }
+    }
+  }
   return (
     <motion.div
       className="detail"
-      initial={{ y: 2000 }}
+      initial={{ y: 1000 }}
       animate={{
         y: 0,
         transition: {
-          type: "tween",
-          duration: 0.3,
+          type: "spring",
+          bounce: 0.1,
         },
       }}
       exit={{
-        y: 2000,
+        y: 1000,
       }}
     >
       <header>
@@ -76,34 +117,7 @@ export default function DetailPage({ skill, setOpen }) {
           <div className="skill-info">
             <div className="skill-info-item">
               <h3>Proficiency: </h3>
-              {
-                {
-                  expert: (
-                    <>
-                      <img src={runFast} alt="expert" />
-                      <h2>Master / Influencer</h2>
-                    </>
-                  ),
-                  proficient: (
-                    <>
-                      <img src={run} alt="Proficient" />
-                      <h2>Proficient</h2>
-                    </>
-                  ),
-                  novice: (
-                    <>
-                      <img src={walk} alt="novice" />
-                      <h2>Novice</h2>
-                    </>
-                  ),
-                  "no-experience-interested": (
-                    <>
-                      <img src={baby} alt="no experience" />
-                      <h2>No experience but interested</h2>
-                    </>
-                  ),
-                }[skillData?.proficiency]
-              }
+              {renderProperInfo()}
             </div>
             <div className="skill-info-item">
               <h3>Recommendations: </h3>
@@ -152,7 +166,7 @@ export default function DetailPage({ skill, setOpen }) {
           </div>
         </>
       ) : (
-        <h1>Loading</h1>
+        <Loading></Loading>
       )}
     </motion.div>
   );

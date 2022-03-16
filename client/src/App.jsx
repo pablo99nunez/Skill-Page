@@ -5,6 +5,7 @@ import SkillPage from "./components/SkillPage/SkillPage";
 import down from "./assets/icons/chevron-down.svg";
 import useUser from "./hooks/useUser";
 import { Routes, useParams } from "react-router";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   const { username } = useParams();
@@ -13,7 +14,7 @@ function App() {
   useEffect(() => {
     if (user) {
       setLoading(false);
-    }
+    } else setLoading(true);
   }, [user]);
 
   return (
@@ -21,7 +22,7 @@ function App() {
       <Navbar></Navbar>
 
       {loading ? (
-        <h1>Loading</h1>
+        <Loading></Loading>
       ) : (
         <>
           <SkillPage user={user}></SkillPage>
