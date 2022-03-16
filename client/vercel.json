@@ -1,14 +1,12 @@
 {
-    "redirects": [
+    "rewrites": [
       { 
-        "source": "/api",
-        "destination": "https://bio.torre.co/", 
-        "permanent": true
+        "source": "/api/:path*",
+        "destination": "https://bio.torre.co/:path*"
       },
       {
-        "source": "/torreco",
-        "destination": "https://torre.co/", 
-        "permanent": true
+        "source": "/torreco/:path*",
+        "destination": "https://torre.co/:path*"
       }
     ],
     "headers": [
