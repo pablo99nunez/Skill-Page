@@ -11,6 +11,12 @@ export default defineConfig({
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
+      "/torreco": {
+        target: "https://torre.co/",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/torreco/, ""),
+      },
     },
   },
   plugins: [react()],

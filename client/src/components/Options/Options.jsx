@@ -7,12 +7,19 @@ export default function Options({ data }) {
   const [openDetail, setOpenDetail] = useState(false);
   return (
     <div className="options">
-      {data.map((e) => {
+      {data.map((e, i) => {
         return (
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            initial={{ background: "var(--color-grey)" }}
+            whileHover={{
+              scale: 1.1,
+              y: -3,
+              color: "black",
+              background: "var(--color-primary)",
+            }}
             className="option"
             onClick={() => setOpenDetail(e)}
+            key={i}
           >
             {e}
           </motion.div>

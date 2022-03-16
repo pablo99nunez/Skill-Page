@@ -8,9 +8,7 @@ export default function Button(props) {
     color = "var(--color-primary)",
     backgroundColor = "var(--color-dark-bg)",
   } = props;
-  useEffect(() => {
-    console.log(color, backgroundColor);
-  }, []);
+
   return (
     <motion.button
       initial={{ backgroundColor }}

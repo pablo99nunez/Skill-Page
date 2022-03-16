@@ -7,6 +7,7 @@
   z-index: 200;
   background-color: var(--color-dark-bg);
   display: flex;
+  overflow-y: scroll;
   flex-direction: column;
   header {
     display: flex;
@@ -26,15 +27,23 @@
     justify-content: center;
     align-items: flex-start;
     gap: 1rem;
-    img {
-      filter: invert(100%) sepia(1%) saturate(1242%) hue-rotate(99deg)
-        brightness(96%) contrast(84%);
+    .skill-info-item {
+      img {
+        filter: invert(100%) sepia(1%) saturate(1242%) hue-rotate(99deg)
+          brightness(96%) contrast(84%);
+      }
     }
     border-bottom: 2px solid var(--color-grey);
     .skill-info-item {
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+    .skill-person {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      cursor: pointer;
     }
   }
 }

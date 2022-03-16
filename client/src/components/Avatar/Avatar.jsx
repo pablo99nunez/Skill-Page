@@ -10,7 +10,6 @@ export default function Avatar({ color, size, borderSize, src }) {
       const unitOfSize = size.replace(numberOnSize, "");
       setBorder(numberOnSize * 0.1 + unitOfSize);
     }
-    console.log(borderSize, border);
   }, [size]);
   return (
     <div className="avatar">
