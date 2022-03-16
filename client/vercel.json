@@ -1,13 +1,13 @@
 {
     "redirects": [
       { 
-        "source": "/api/:path",
-        "destination": "https://bio.torre.co/:path"
+        "source": "/api/api/bios/:username",
+        "destination": "https://bio.torre.co/api/bios/:username"
       },
       
       {
-        "source": "/torreco/:path",
-        "destination": "https://torre.co/:path"
+        "source": "/torreco/api/genome/bios/:publicId/jobs/:id",
+        "destination": "https://torre.co/api/genome/bios/:publicId/jobs/:id"
       }
     ]
   }
