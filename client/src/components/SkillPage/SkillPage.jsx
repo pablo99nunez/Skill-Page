@@ -12,7 +12,7 @@ import Options from "../Options/Options";
 export default function SkillPage({ user }) {
   return (
     <div className="skillPage">
-      <Avatar size="10rem" src={user?.person.picture}></Avatar>
+      <Avatar size="15rem" src={user?.person.picture}></Avatar>
       <h1>
         {user?.person.name}{" "}
         {user?.person.verified && <img src={verified} alt="verified" />}
